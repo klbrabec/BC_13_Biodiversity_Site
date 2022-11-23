@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:rgb(164, 164, 168);">
+
+
+ </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" >
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <h3>Use the interactive charts below to explore the dataset</h3>
+      </div>
+    </div>
+    <h3 class="header text-center">This project tracks the number and types of bacteria found in the belly button of volunteers. <br>
+      The sponsor of this project has a theory that the bacteria found on the skin of participants can be used
+      to manufacture meat substitutes. <br> To see the specific results by test subject, select the appropriate
+      Test Subject ID number from the drop down list below. </h3>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h4>Test Subject ID No.:</h4>
+          <!--calls the optionChanged function and sets to the value selected-->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary text-left">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+          <p class="info text-center"><b>Meta Data for each Test Participant</b></p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p class="barexplainer text-center"><b>This graph charts the top ten bacteria found for the Test Participant. Results are grouped by OTU ID and listed in descending order based on Sample Values.</b></p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p class="gaugeexplainer text-center"><b>Participants were asked to indicate how many times in a 7 day period they scrubbed their belly button.</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p class="bubbleexplainer text-center"><b>For each sample taken, multiple cultures were found.  This chart indicates the OTU and number of cultures.</b> </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/static/js/charts.js"></script>
+
+</body>
+
+</html>
